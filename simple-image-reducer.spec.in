@@ -5,8 +5,8 @@ Summary:        Reduce and rotate images in three-four clicks
 
 Group:          Applications/Multimedia
 License:        GPL
-URL:            http://lostclus.linux.kiev.ua/
-Source0:        %{name}-%{version}.tar.bz2
+URL:            http://simple-image-reducer.org.ua/
+Source0:        http://simple-image-reducer.org.ua/download/%{name}-%{version}.tar.bz2
 BuildArch:      noarch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}root-%(%{__id_u} -n)
 

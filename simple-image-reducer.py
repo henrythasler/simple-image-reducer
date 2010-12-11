@@ -302,7 +302,7 @@ GNU General Public License for more details.
  
 You should have received a copy of the GNU General Public License
 along with this program; if not, see <http://www.gnu.org/licenses/>."""))
-        dialog.set_website("http://www.lostclus.kiev.ua/")
+        dialog.set_website("http://simple-image-reducer.org.ua/")
         dialog.connect('response', lambda d, r: d.destroy())
         dialog.show()
 
