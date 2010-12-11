@@ -1,0 +1,9 @@
+[Desktop Entry]
+_Name=Simple Image Reducer
+_Comment=Reduce and rotate images in three-four clicks
+Exec=simple-image-reducer %U
+Icon=simple-image-reducer.png
+Terminal=false
+Type=Application
+Categories=Graphics;2DGraphics;RasterGraphics;GTK;
+MimeType=image/bmp;image/gif;image/x-portable-anymap;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-tga;image/x-xbitmap;image/tiff;image/jpeg;image/png;

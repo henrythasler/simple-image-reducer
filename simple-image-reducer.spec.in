@@ -1,0 +1,66 @@
+Name:           simple-image-reducer
+Version:        1.0
+Release:        0.1%{?dist}
+Summary:        Reduce and rotate images in three-four clicks
+
+Group:          Applications/Multimedia
+License:        GPL
+URL:            http://lostclus.linux.kiev.ua/
+Source0:        %{name}-%{version}.tar.bz2
+BuildArch:      noarch
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}root-%(%{__id_u} -n)
+
+BuildRequires: desktop-file-utils
+BuildRequires: gettext
+BuildRequires: intltool
+BuildRequires: findutils
+BuildRequires: python
+
+Requires: python >= 2.4
+Requires: pygtk2 >= 2.12
+Requires: gtk2
+
+%description
+Simple GTK application to reduce and rotate images in three-four clicks from
+file manager.
+
+
+%prep
+%setup -q
+
+%build
+make %{?_smp_mflags}
+
+
+%install
+rm -rf $RPM_BUILD_ROOT
+make install DESTDIR=$RPM_BUILD_ROOT
+
+%find_lang %name
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+
+%post
+update-desktop-database &> /dev/null || :
+touch --no-create %{_datadir}/icons/hicolor &>/dev/null || :
+
+%postun
+if [ $1 -eq 0 ] ; then
+    touch --no-create %{_datadir}/icons/hicolor &>/dev/null
+    gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
+fi
+update-desktop-database &> /dev/null || :
+
+%posttrans
+gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
+
+
+%files -f %{name}.lang
+%defattr(-,root,root,-)
+%doc
+%{_bindir}/simple-image-reducer
+%{_datadir}/applications/%{name}.desktop
+%{_datadir}/pixmaps/simple-image-reducer.png
+%{_datadir}/icons/hicolor/*/apps/simple-image-reducer.*

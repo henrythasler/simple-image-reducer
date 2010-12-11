@@ -1,0 +1,204 @@
+# Simple Image Reducer - Reduce and rotate images in three-four clicks
+# Copyright (C) 2010 Konstantin Korikov
+# This file is distributed under the same license as the Simple Image Reducer
+# package.
+# Konstantin Korikov <lostclus@gmail.com>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: simple-images-reducer 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-12-11 02:54+0200\n"
+"PO-Revision-Date: 2010-12-11 02:20+0200\n"
+"Last-Translator: Konstantin Korikov <lostclus@gmail.com>\n"
+"Language-Team: Russian <RU@ru.org>\n"
+"Language: Russian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../simple-image-reducer.py:59 ../simple-image-reducer.py:286
+msgid "Simple Image Reducer"
+msgstr "Простой преобразователь изображений"
+
+#: ../simple-image-reducer.py:70
+msgid "Input Files:"
+msgstr "Входные файлы"
+
+#: ../simple-image-reducer.py:84
+msgid "Drag image files here"
+msgstr "Перетащите сюда файлы изображений"
+
+#: ../simple-image-reducer.py:99
+msgid "File"
+msgstr "Файл"
+
+#: ../simple-image-reducer.py:111
+msgid "Add files..."
+msgstr "Добавить файлы..."
+
+#: ../simple-image-reducer.py:119
+msgid "Remove files"
+msgstr "Удалить файлы"
+
+#: ../simple-image-reducer.py:126
+msgid "Fit to:"
+msgstr "Подогнать под:"
+
+#: ../simple-image-reducer.py:133
+msgid "Select a maximum width and height"
+msgstr "Выберите максимальную ширину и высоту"
+
+#: ../simple-image-reducer.py:135 ../simple-image-reducer.py:229
+msgid "No change"
+msgstr "Не менять"
+
+#: ../simple-image-reducer.py:163
+msgid "Rotate:"
+msgstr "Повернуть:"
+
+#: ../simple-image-reducer.py:170
+msgid "Select a rotation method"
+msgstr "Выберите метод вращения"
+
+#: ../simple-image-reducer.py:172
+msgid "No rotate"
+msgstr "Не поворачивать"
+
+#: ../simple-image-reducer.py:173
+msgid "90° clockwise"
+msgstr "На 90° по часовой стрелке"
+
+#: ../simple-image-reducer.py:174
+msgid "180°"
+msgstr "На 180°"
+
+#: ../simple-image-reducer.py:175
+msgid "90° counter-clockwise"
+msgstr "На 90°  против часовой стрелки"
+
+#: ../simple-image-reducer.py:176
+msgid "According to EXIF data"
+msgstr "Согласно данным EXIF"
+
+#: ../simple-image-reducer.py:192
+msgid "Output files:"
+msgstr "Выходные файлы:"
+
+#: ../simple-image-reducer.py:204
+msgid "Modify images in place"
+msgstr "Изменить изображения на месте"
+
+#: ../simple-image-reducer.py:221
+msgid "Output format:"
+msgstr "Выходной формат:"
+
+#: ../simple-image-reducer.py:230
+msgid "BMP"
+msgstr "BMP"
+
+#: ../simple-image-reducer.py:231
+msgid "GIF"
+msgstr "GIF"
+
+#: ../simple-image-reducer.py:232
+msgid "JPEG"
+msgstr "JPEG"
+
+#: ../simple-image-reducer.py:233
+msgid "PNG"
+msgstr "PNG"
+
+#: ../simple-image-reducer.py:234
+msgid "PPM"
+msgstr "PPM"
+
+#: ../simple-image-reducer.py:235
+msgid "TIFF"
+msgstr "TIFF"
+
+#: ../simple-image-reducer.py:287
+msgid "Reduce and rotate images in three-four clicks."
+msgstr "Уменьшает и поворачивает изображения в три-четыре клика."
+
+#: ../simple-image-reducer.py:289
+msgid "(c) Copyright 2010 Konstantin Korikov"
+msgstr "(c) Copyright 2010 Кориков Константин"
+
+#: ../simple-image-reducer.py:290
+msgid ""
+"This program is free software; you can redistribute it and/or modify\n"
+"it under the terms of the GNU General Public License as published by\n"
+"the Free Software Foundation; either version 2 of the License, or\n"
+"(at your option) any later version.\n"
+"\n"
+"This program is distributed in the hope that it will be useful,\n"
+"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+"GNU General Public License for more details.\n"
+" \n"
+"You should have received a copy of the GNU General Public License\n"
+"along with this program; if not, see <http://www.gnu.org/licenses/>."
+msgstr ""
+"Данная программа является свободным ПО. Вы вправе распространять и/или\n"
+"модифицировать ее в рамках условий лицензии GNU General Public License\n"
+"опубликованной Free Software Foundation версии 3 либо (на Ваш выбор) более\n"
+"поздней версии.\n"
+"\n"
+"Программа распространяеся в надежде на то, что она будет полезна, однако НЕ\n"
+"ПРЕДОСТАВЛЯЕТСЯ НИКАКИХ ГАРАНТИЙ, в том числе ГАРАНТИИ ТОВАРНОГО СОСТОЯНИЯ "
+"ПРИ\n"
+"ПРОДАЖЕ и ПРИГОДНОСТИ ДЛЯ ИСПОЛЬЗОВАНИЯ В КОНКРЕТНЫХ ЦЕЛЯХ. Для получения "
+"более\n"
+"подробной информации ознакомьтесь с GNU General Public License.\n"
+"\n"
+"Вместе с данной программой вы должны были получить экземпляр GNU General "
+"Public\n"
+"License. Если нет, смотрите <http://www.gnu.org/licenses/>."
+
+#: ../simple-image-reducer.py:328
+msgid "Add File..."
+msgstr "Добавить файл..."
+
+#: ../simple-image-reducer.py:335
+msgid "Image Files"
+msgstr "Файлы изображений"
+
+#: ../simple-image-reducer.py:345
+msgid "All Files"
+msgstr "Все файлы"
+
+#: ../simple-image-reducer.py:379
+#, python-format
+msgid "Append \"-%s\" to the file base name"
+msgstr "Добавить \"-%s\" к базовому имени файла"
+
+#: ../simple-image-reducer.py:381
+#, python-format
+msgid "Save to \"%s\" subdirectory"
+msgstr "Сохранить в подкаталог \"%s\""
+
+#: ../simple-image-reducer.py:385
+#, python-format
+msgid "%(current)d of %(total)d images processed"
+msgstr "Обработано %(current)d из %(total)d изображений"
+
+#: ../simple-image-reducer.py:389
+#, python-format
+msgid "%d images to process"
+msgstr "%d изображений для обработки"
+
+#: ../simple-image-reducer.py:431
+#, python-format
+msgid "Cannot identify image file: %s"
+msgstr "Невозможно определить тип изображения: %s"
+
+#: ../simple-image-reducer.py:433
+#, python-format
+msgid "Unable to open file: %s"
+msgstr "Не открывается файл: %s"
+
+#: ../simple-image-reducer.py:463
+#, python-format
+msgid "Unable to open file for writing: %s"
+msgstr "Не открывается файл для записи: %s"

@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="48px"
+   height="48px"
+   id="svg2985"
+   version="1.1"
+   inkscape:version="0.48.0 r9654"
+   sodipodi:docname="simple-image-reducer.svg"
+   inkscape:export-filename="/home/lostclus/work/projects/simple-image-reducer/svn/trunk/simple-image-reducer.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs2987">
+    <linearGradient
+       id="linearGradient5382">
+      <stop
+         style="stop-color:#05a305;stop-opacity:1;"
+         offset="0"
+         id="stop5384" />
+      <stop
+         style="stop-color:#7adf7a;stop-opacity:1;"
+         offset="1"
+         id="stop5386" />
+    </linearGradient>
+    <marker
+       inkscape:stockid="Arrow2Sstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Sstart"
+       style="overflow:visible">
+      <path
+         id="path3823"
+         style="font-size:12.0;fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.3) translate(-2.3,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Mstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Mstart"
+       style="overflow:visible">
+      <path
+         id="path3817"
+         style="font-size:12.0;fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.6) translate(0,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lstart"
+       style="overflow:visible">
+      <path
+         id="path3793"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;marker-start:none"
+         transform="scale(0.8) translate(12.5,0)" />
+    </marker>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5382"
+       id="linearGradient5398"
+       x1="45"
+       y1="42"
+       x2="2"
+       y2="5"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.8284271"
+     inkscape:cx="23.122421"
+     inkscape:cy="23.573"
+     inkscape:current-layer="layer2"
+     showgrid="false"
+     inkscape:grid-bbox="true"
+     inkscape:document-units="px"
+     inkscape:window-width="1106"
+     inkscape:window-height="814"
+     inkscape:window-x="37"
+     inkscape:window-y="525"
+     inkscape:window-maximized="0"
+     inkscape:snap-grids="true"
+     showborder="false">
+    <inkscape:grid
+       type="xygrid"
+       id="grid2993"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true"
+       spacingx="1px" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata2990">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="bg">
+    <rect
+       style="fill:#008000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="rect5378"
+       width="48"
+       height="48"
+       x="0"
+       y="0"
+       ry="4"
+       rx="4" />
+    <rect
+       style="fill:url(#linearGradient5398);fill-opacity:1.0;fill-rule:nonzero;stroke:none"
+       id="rect5390"
+       width="46"
+       height="46"
+       x="1"
+       y="1"
+       rx="4"
+       ry="4" />
+  </g>
+  <g
+     id="layer1"
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     sodipodi:insensitive="true">
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       d="M 3,12 3,36 11,24 z"
+       id="path2997"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc" />
+    <path
+       sodipodi:nodetypes="cccc"
+       inkscape:connector-curvature="0"
+       id="path3786"
+       d="M 45,12 45,36 37,24 z"
+       style="fill:#ffffff;fill-opacity:1;stroke:none" />
+    <path
+       sodipodi:type="arc"
+       style="fill:none;stroke:#ffffff;stroke-width:2.38190913;stroke-miterlimit:4;stroke-dasharray:none;marker-start:none"
+       id="path3788"
+       sodipodi:cx="29"
+       sodipodi:cy="19"
+       sodipodi:rx="12.399264"
+       sodipodi:ry="13.069862"
+       d="M 20.561816,9.4235575 A 12.399264,13.069862 0 0 1 38.076522,10.095737"
+       sodipodi:start="3.9638909"
+       sodipodi:end="5.5336727"
+       transform="matrix(1.5516763,0,0,1.472155,-20.998613,-3.9721637)"
+       sodipodi:open="true" />
+    <path
+       sodipodi:open="true"
+       transform="matrix(1.5516763,0,0,1.472155,-20.998613,-3.9721637)"
+       sodipodi:end="2.3942443"
+       sodipodi:start="0.82572268"
+       d="M 37.407023,28.606845 A 12.399264,13.069862 0 0 1 19.905217,27.883536"
+       sodipodi:ry="13.069862"
+       sodipodi:rx="12.399264"
+       sodipodi:cy="19"
+       sodipodi:cx="29"
+       id="path5344"
+       style="fill:none;stroke:#ffffff;stroke-width:2.38190913;stroke-miterlimit:4;stroke-dasharray:none;marker-start:none"
+       sodipodi:type="arc" />
+    <path
+       style="fill:#ffffff;stroke:none"
+       d="m 7,14 4,-13 2,7 6,4 z"
+       id="path5346"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       sodipodi:nodetypes="ccccc"
+       inkscape:connector-curvature="0"
+       id="path5348"
+       d="M 41,34 37,47 35,40 29,36 z"
+       style="fill:#ffffff;stroke:none" />
+    <rect
+       style="opacity:0;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="rect5352"
+       width="26"
+       height="20"
+       x="11"
+       y="14"
+       rx="0"
+       ry="0" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="path5354"
+       sodipodi:cx="25.5"
+       sodipodi:cy="21.5"
+       sodipodi:rx="3.5"
+       sodipodi:ry="3.5"
+       d="m 29,21.5 a 3.5,3.5 0 1 1 -7,0 3.5,3.5 0 1 1 7,0 z"
+       transform="matrix(1.7142857,0,0,1.7142857,-19.714285,-18.857143)" />
+    <path
+       transform="matrix(1.7142857,0,0,1.7142857,-14.714285,-11.857143)"
+       d="m 29,21.5 a 3.5,3.5 0 1 1 -7,0 3.5,3.5 0 1 1 7,0 z"
+       sodipodi:ry="3.5"
+       sodipodi:rx="3.5"
+       sodipodi:cy="21.5"
+       sodipodi:cx="25.5"
+       id="path5372"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       sodipodi:type="arc" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="path5374"
+       sodipodi:cx="25.5"
+       sodipodi:cy="21.5"
+       sodipodi:rx="3.5"
+       sodipodi:ry="3.5"
+       d="m 29,21.5 a 3.5,3.5 0 1 1 -7,0 3.5,3.5 0 1 1 7,0 z"
+       transform="matrix(1.7142857,0,0,1.7142857,-24.714285,-11.857143)" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="rect5376"
+       width="2.0000048"
+       height="7"
+       x="22.999998"
+       y="28" />
+  </g>
+</svg>
