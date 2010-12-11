@@ -19,6 +19,8 @@ BuildRequires: python
 Requires: python >= 2.4
 Requires: pygtk2 >= 2.12
 Requires: gtk2
+Requires: python-imaging
+Requires: python-exif
 
 %description
 Simple GTK application to reduce and rotate images in three-four clicks from
@@ -59,7 +61,6 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
 
 %files -f %{name}.lang
 %defattr(-,root,root,-)
-%doc
 %{_bindir}/simple-image-reducer
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/pixmaps/simple-image-reducer.png

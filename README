@@ -1,0 +1,12 @@
+Simple Image Reducer - reduce and rotate images in three-four clicks.
+
+Requirements:
+
+  Python >= 2.4
+  PyGTK >= 2.12
+  Python Imaging Library (PIL)
+  EXIF.py
+
+To install the program type in the console:
+
+  make install

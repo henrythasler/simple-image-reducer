@@ -46,6 +46,7 @@ install:	all
 dist: $(PKGNAME).spec
 	mkdir -p .dist/${PKGNAME}-${VERSION}
 	cp -a Makefile \
+	    AUTHORS COPYING README \
 	    ${PKGNAME}.py \
 	    ${PKGNAME}.desktop.in \
 	    ${PKGNAME}.png \
