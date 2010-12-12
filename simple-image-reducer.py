@@ -416,16 +416,17 @@ along with this program; if not, see <http://www.gnu.org/licenses/>."""))
 
         for (input,) in self.input_files.get_model():
             self.update_status_bar()
+            base, ext = os.path.splitext(input)
             if output_type == 'append':
-                base, ext = os.path.splitext(input)
                 output = "%s-%s%s" % (base, output_suffix, extension or ext)
             elif output_type == 'subdirectory':
                 dir = os.path.join(os.path.dirname(input), output_suffix)
-                output = os.path.join(dir, os.path.basename(input))
+                output = os.path.join(dir,
+                        os.path.basename(base) + (extension or ext))
                 if not os.path.exists(dir):
                     os.makedirs(dir)
             else:
-                output = input
+                output = base + (extension or ext)
             try:
                 img = Image.open(input)
             except IOError:
