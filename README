@@ -8,6 +8,7 @@ dragging files to the main window.
 
 Requirements:
 
+  Linux or other Unix-like OS
   Python >= 2.4
   PyGTK >= 2.12
   Python Imaging Library (PIL)
