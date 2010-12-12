@@ -1,6 +1,7 @@
+# This spec file is optimized for Fedora
 Name:           simple-image-reducer
 Version:        1.0
-Release:        0.1%{?dist}
+Release:        1%{?dist}
 Summary:        Reduce and rotate images in three-four clicks
 
 Group:          Applications/Multimedia
@@ -23,8 +24,11 @@ Requires: python-imaging
 Requires: python-exif
 
 %description
-Simple GTK application to reduce and rotate images in three-four clicks from
-file manager.
+Simple Image Reducer - is an GTK application to simple reduce and rotate
+images. The program can be useful for processing digital photos before sending
+by e-mail or uploading on the web. Image files can be supplied to the
+application from the file manager using the context menu "Open with...", or
+dragging files to the main window.
 
 
 %prep
