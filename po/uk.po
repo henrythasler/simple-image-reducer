@@ -1,0 +1,204 @@
+# vim:spell:spelllang=uk
+# Simple Image Reducer - Reduce and rotate images in three-four clicks
+# Copyright (C) 2010 Konstantin Korikov
+# This file is distributed under the same license as the Simple Image Reducer
+# package.
+# Konstantin Korikov <lostclus@gmail.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: Simple Image Reducer 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-12-11 04:16+0200\n"
+"PO-Revision-Date: 2010-12-13 02:03+0300\n"
+"Last-Translator: Konstantin Korikov <lostclus@gmail.com>\n"
+"Language-Team: Ukrainian\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Virtaal 0.6.1\n"
+
+#: ../simple-image-reducer.py:59 ../simple-image-reducer.py:287
+msgid "Simple Image Reducer"
+msgstr "Простий перетворювач зображень"
+
+#: ../simple-image-reducer.py:71
+msgid "Input Files:"
+msgstr "Вхідні файли:"
+
+#: ../simple-image-reducer.py:85
+msgid "Drag image files here"
+msgstr "Перетягніть сюди файли зображень"
+
+#: ../simple-image-reducer.py:100
+msgid "File"
+msgstr "Файл"
+
+#: ../simple-image-reducer.py:112
+msgid "Add files..."
+msgstr "Додати файли..."
+
+#: ../simple-image-reducer.py:120
+msgid "Remove files"
+msgstr "Вилучити файли"
+
+#: ../simple-image-reducer.py:127
+msgid "Fit to:"
+msgstr "Підігнати під:"
+
+#: ../simple-image-reducer.py:134
+msgid "Select a maximum width and height"
+msgstr "Виберіть максимальну ширину і висоту"
+
+#: ../simple-image-reducer.py:136 ../simple-image-reducer.py:230
+msgid "No change"
+msgstr "Без змін"
+
+#: ../simple-image-reducer.py:164
+msgid "Rotate:"
+msgstr "Повернути:"
+
+#: ../simple-image-reducer.py:171
+msgid "Select a rotation method"
+msgstr "Виберіть метод обертання"
+
+#: ../simple-image-reducer.py:173
+msgid "No rotate"
+msgstr "Без змін"
+
+#: ../simple-image-reducer.py:174
+msgid "90° clockwise"
+msgstr "На 90° за годинниковою стрілкою"
+
+#: ../simple-image-reducer.py:175
+msgid "180°"
+msgstr "На 180°"
+
+#: ../simple-image-reducer.py:176
+msgid "90° counter-clockwise"
+msgstr "90° проти годинникової стрілки"
+
+#: ../simple-image-reducer.py:177
+msgid "According to EXIF data"
+msgstr "Відповідно до даних EXIF"
+
+#: ../simple-image-reducer.py:193
+msgid "Output files:"
+msgstr "Вихідні файли:"
+
+#: ../simple-image-reducer.py:205
+msgid "Modify images in place"
+msgstr "Змінити зображення на місці"
+
+#: ../simple-image-reducer.py:222
+msgid "Output format:"
+msgstr "Вихідний формат:"
+
+#: ../simple-image-reducer.py:231
+msgid "BMP"
+msgstr "BMP"
+
+#: ../simple-image-reducer.py:232
+msgid "GIF"
+msgstr "GIF"
+
+#: ../simple-image-reducer.py:233
+msgid "JPEG"
+msgstr "JPEG"
+
+#: ../simple-image-reducer.py:234
+msgid "PNG"
+msgstr "PNG"
+
+#: ../simple-image-reducer.py:235
+msgid "PPM"
+msgstr "PPM"
+
+#: ../simple-image-reducer.py:236
+msgid "TIFF"
+msgstr "TIFF"
+
+#: ../simple-image-reducer.py:289
+msgid "Reduce and rotate images in three-four clicks."
+msgstr "Зменшення і обертання зображень в три-чотири клацання."
+
+#: ../simple-image-reducer.py:291
+msgid "(c) Copyright 2010 Konstantin Korikov"
+msgstr "(c) Copyright 2010 Коріков Костянтин"
+
+#: ../simple-image-reducer.py:292
+msgid ""
+"This program is free software; you can redistribute it and/or modify\n"
+"it under the terms of the GNU General Public License as published by\n"
+"the Free Software Foundation; either version 2 of the License, or\n"
+"(at your option) any later version.\n"
+"\n"
+"This program is distributed in the hope that it will be useful,\n"
+"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+"GNU General Public License for more details.\n"
+" \n"
+"You should have received a copy of the GNU General Public License\n"
+"along with this program; if not, see <http://www.gnu.org/licenses/>."
+msgstr ""
+"Ця програма є вільним програмним забезпеченням. Ви маєте право "
+"розповсюджувати її в рамах умови GNU General Public License, опублікованій "
+"через Free Software Foundation, версія 2 або (на Ваш вибір) будь-яка інша "
+"пізніша версія.\n"
+"\n"
+"Програма поширюється в надії на те, що вона буде корисна, однак не надає "
+"ЖОДНОЇ ГАРАНТІЇ, у тому числі ГАРАНТІЇ ТОВАРНОГО СТАНУ ДЛЯ ПРОДАЖІ і "
+"ПРИДАТНОСТІ ДО ВИКОРИСТАННЯ В ПЕВНИХ ЦІЛЯХ. Для отримання більш детальної "
+"інформації ознайомтеся з GNU General Public License.\n"
+"\n"
+"Ви повинні отримати копію GNU General Public License разом з цією програмою. "
+"Якщо ні, то дивіться <http://www.gnu.org/licenses/>."
+
+#: ../simple-image-reducer.py:330
+msgid "Add File..."
+msgstr "Додати файл..."
+
+#: ../simple-image-reducer.py:337
+msgid "Image Files"
+msgstr "Файли зображень"
+
+#: ../simple-image-reducer.py:347
+msgid "All Files"
+msgstr "Всі файли"
+
+#: ../simple-image-reducer.py:381
+#, python-format
+msgid "Append \"-%s\" to the file base name"
+msgstr "Додати \"-%s\" до імені файлу"
+
+#: ../simple-image-reducer.py:383
+#, python-format
+msgid "Save to \"%s\" subdirectory"
+msgstr "Зберегти в підкаталозі \"%s\""
+
+#: ../simple-image-reducer.py:387
+#, python-format
+msgid "%(current)d of %(total)d images processed"
+msgstr "%(current)d з %(total)d зображень оброблено"
+
+#: ../simple-image-reducer.py:391
+#, python-format
+msgid "%d images to process"
+msgstr "%d зображень для обробки"
+
+#: ../simple-image-reducer.py:433
+#, python-format
+msgid "Cannot identify image file: %s"
+msgstr "Не можу визначити файл зображення: %s"
+
+#: ../simple-image-reducer.py:435
+#, python-format
+msgid "Unable to open file: %s"
+msgstr "Не вдається відкрити файл: %s"
+
+#: ../simple-image-reducer.py:465
+#, python-format
+msgid "Unable to open file for writing: %s"
+msgstr "Неможливо відкрити файл для запису: %s"
