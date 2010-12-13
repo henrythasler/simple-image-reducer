@@ -52,6 +52,7 @@ dist: $(PKGNAME).spec
 	    ${PKGNAME}.png \
 	    ${PKGNAME}.svg \
 	    ${PKGNAME}.spec \
+	    ${PKGNAME}.spec.in \
 	    .dist/${PKGNAME}-${VERSION}
 	mkdir -p .dist/${PKGNAME}-${VERSION}/po
 	cp -a po/Makefile \
