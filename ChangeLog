@@ -1,3 +1,11 @@
+2010-12-15 16:04  lostclus
+
+	* [r16] ChangeLog, Makefile: Added ChangeLog.
+
+2010-12-15 16:01  lostclus
+
+	* [r15] po/uk.po: Translations updated.
+
 2010-12-15 15:57  lostclus
 
 	* [r14] Makefile, po/Makefile, simple-image-reducer.spec.in: Fixed
