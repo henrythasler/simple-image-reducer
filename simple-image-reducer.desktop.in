@@ -1,6 +1,6 @@
 [Desktop Entry]
 _Name=Simple Image Reducer
-_Comment=Reduce and rotate images in three-four clicks
+_Comment=Reduce and rotate images in three-four clicks.
 Exec=simple-image-reducer %U
 Icon=simple-image-reducer.png
 Terminal=false
