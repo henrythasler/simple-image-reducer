@@ -1,6 +1,6 @@
 # This spec file is optimized for Fedora
 Name:           simple-image-reducer
-Version:        1.0
+Version:        @VERSION@
 Release:        1%{?dist}
 Summary:        Reduce and rotate images in three-four clicks
 

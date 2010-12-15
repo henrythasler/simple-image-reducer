@@ -74,6 +74,12 @@ install: $(MOFILES)
 	    $(INSTALL_DATA) --verbose $$n $(INSTALL_NLS_DIR)/$$l/LC_MESSAGES/$(NLSPACKAGE).mo; \
 	done
 
+uninstall:
+	@for n in $(MOFILES); do \
+	    l=`basename $$n .mo`; \
+	    rm -f $(INSTALL_NLS_DIR)/$$l/LC_MESSAGES/$(NLSPACKAGE).mo; \
+	done
+
 %.mo: %.po
 	$(MSGFMT) -o $@ $<
 
