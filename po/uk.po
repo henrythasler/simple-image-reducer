@@ -153,7 +153,8 @@ msgstr ""
 "ПРИДАТНОСТІ ДО ВИКОРИСТАННЯ В ПЕВНИХ ЦІЛЯХ. Для отримання більш детальної\n"
 "інформації ознайомтеся з GNU General Public License.\n"
 "\n"
-"Ви повинні отримати копію GNU General Public License разом з цією програмою.\n"
+"Ви повинні отримати копію GNU General Public License разом з цією "
+"програмою.\n"
 "Якщо ні, то дивіться <http://www.gnu.org/licenses/>."
 
 #: ../simple-image-reducer.py:330
