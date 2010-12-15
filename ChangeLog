@@ -1,0 +1,63 @@
+2010-12-15 15:57  lostclus
+
+	* [r14] Makefile, po/Makefile, simple-image-reducer.spec.in: Fixed
+	  version substitution in .spec. Added uninstall rule. Run
+	  update-desktop-database and gtk-update-icon-cache on install and
+	  uninstall.
+
+2010-12-15 15:09  lostclus
+
+	* [r13] simple-image-reducer.desktop.in: Fixed comment.
+
+2010-12-15 15:07  lostclus
+
+	* [r12] Makefile: Changed version to 1.0.1.
+
+2010-12-13 00:14  lostclus
+
+	* [r10] Makefile: Include .spec.in into distribution.
+
+2010-12-13 00:10  lostclus
+
+	* [r9] po/uk.po: Translations updated.
+
+2010-12-13 00:06  lostclus
+
+	* [r8] po/ru.po: Translations updated.
+
+2010-12-13 00:05  lostclus
+
+	* [r7] po/ru.po, po/uk.po: Translations updated.
+
+2010-12-12 23:13  lostclus
+
+	* [r6] README: README updated.
+
+2010-12-12 22:43  lostclus
+
+	* [r5] simple-image-reducer.py: Fixed output file extension when
+	  changing output format.
+
+2010-12-12 21:26  lostclus
+
+	* [r4] README, simple-image-reducer.spec.in: Description updated.
+	  Spec updated.
+
+2010-12-11 12:01  lostclus
+
+	* [r3] simple-image-reducer.py, simple-image-reducer.spec.in:
+	  Changed web site to http://simple-image-reducer.org.ua.
+
+2010-12-11 11:58  lostclus
+
+	* [r2] AUTHORS, COPYING, Makefile, README,
+	  simple-image-reducer.spec.in: Added README, COPYING, AUTHORS.
+	  Fixed requirements in .spec.
+
+2010-12-11 02:15  lostclus
+
+	* [r1] ., Makefile, po, po/Makefile, po/ru.po,
+	  simple-image-reducer.desktop.in, simple-image-reducer.png,
+	  simple-image-reducer.py, simple-image-reducer.spec.in,
+	  simple-image-reducer.svg: Initial import.
+
