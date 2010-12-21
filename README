@@ -1,10 +1,10 @@
 Simple Image Reducer - reduce and rotate images in three-four clicks.
 
-Simple Image Reducer - is an GTK application to simple reduce and rotate
-images. The program can be useful for processing digital photos before sending
-by e-mail or uploading on the web. Image files can be supplied to the
-application from the file manager using the context menu "Open with...", or
-dragging files to the main window.
+Simple Image Reducer is an GTK application to easily reduce and rotate images.
+It can be useful for processing digital photos before sending by email or
+uploading on the Web. Image files can be supplied to the application from the
+file manager using the context menu "Open with...", or dragging files to the
+main window.
 
 Requirements:
 
