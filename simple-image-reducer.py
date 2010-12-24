@@ -21,6 +21,8 @@
 import sys
 import os
 import os.path
+import urllib
+import urlparse
 import ConfigParser
 
 import Image
@@ -306,14 +308,14 @@ along with this program; if not, see <http://www.gnu.org/licenses/>."""))
         dialog.connect('response', lambda d, r: d.destroy())
         dialog.show()
 
-    def add_input_file(self, uri):
-        if uri.startswith('file://'):
-            uri = uri[7:]
+    def add_input_file(self, path):
+        if path.startswith('file://'):
+            path = urllib.unquote(urlparse.urlsplit(path)[2])
         else:
-            uri = os.path.abspath(uri)
+            path = os.path.abspath(path)
         model = self.input_files.get_model()
         iter = model.append()
-        model.set(iter, 0, uri)
+        model.set(iter, 0, path)
         self.update_status_bar()
 
     def on_input_files_drag_data_received(self, widget, context, x, y,
