@@ -1,3 +1,30 @@
+2010-12-24 16:19  lostclus
+
+	* [r23] Makefile: Changed version to 1.0.2.
+
+2010-12-24 16:17  lostclus
+
+	* [r22] simple-image-reducer.py: Disable the Execute button if
+	  input files list is empty.
+
+2010-12-24 15:47  lostclus
+
+	* [r21] po/ru.po, po/uk.po, simple-image-reducer.py: Fixed license
+	  link.
+
+2010-12-24 15:14  lostclus
+
+	* [r20] simple-image-reducer.py: Fixed bug with localized filenames
+	  and filenames with spaces and other non-alphanumeric characters.
+
+2010-12-21 21:38  lostclus
+
+	* [r19] README: Description was updated.
+
+2010-12-15 16:07  lostclus
+
+	* [r17] ChangeLog: ChangeLog updated.
+
 2010-12-15 16:04  lostclus
 
 	* [r16] ChangeLog, Makefile: Added ChangeLog.
