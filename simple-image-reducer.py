@@ -275,6 +275,7 @@ class MainWindow(gtk.Window):
         self.statusbar = gtk.Statusbar()
         vbox.pack_start(self.statusbar, False, False)
         self.update_status_bar()
+        self.update_buttons()
 
         for uri in argv[1:]:
             self.add_input_file(uri)
@@ -318,6 +319,7 @@ along with this program; if not, see http://www.gnu.org/licenses/"""))
         iter = model.append()
         model.set(iter, 0, path)
         self.update_status_bar()
+        self.update_buttons()
 
     def on_input_files_drag_data_received(self, widget, context, x, y,
             data, info, time):
@@ -362,6 +364,7 @@ along with this program; if not, see http://www.gnu.org/licenses/"""))
         for row in rows:
             model.remove(model.get_iter(row.get_path()))
         self.update_status_bar()
+        self.update_buttons()
 
     def get_output_suffix(self):
         size = self.resolution_map[
@@ -396,7 +399,13 @@ along with this program; if not, see http://www.gnu.org/licenses/"""))
         self.statusbar.pop(0)
         self.statusbar.push(0, msg)
 
+    def update_buttons(self):
+        self.execute_button.set_sensitive(
+                len(self.input_files.get_model()) > 0 and self.task is None)
+
     def execute_task(self):
+        self.update_buttons()
+
         size = self.resolution_map[
                 self.resolution.get_active()][0]
         rotate_method = self.rotate_map[
@@ -505,7 +514,6 @@ along with this program; if not, see http://www.gnu.org/licenses/"""))
     def execute(self, *args):
         if self.task is not None:
             return
-        self.execute_button.set_sensitive(False)
         self.processed_count = 0
         self.task = self.execute_task()
         gobject.idle_add(self.execute_iter)
