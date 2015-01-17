@@ -17,3 +17,8 @@ Requirements:
 To install the program type in the console:
 
     make install
+
+References
+* http://simple-image-reducer.org.ua/en/
+* http://stackoverflow.com/questions/17042602/preserve-exif-data-of-image-with-pil-when-resizecreate-thumbnail
+* http://effbot.org/imagingbook/
