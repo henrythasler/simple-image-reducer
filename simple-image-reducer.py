@@ -3,6 +3,7 @@
 
 # Simple Image Reducer - Reduce and rotate images in three-four clicks
 # Copyright (C) 2010  Konstantin Korikov
+# Copyright (c) 2015  Henry Thasler
 
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -25,8 +26,8 @@ import urllib
 import urlparse
 import ConfigParser
 
-import Image
-import EXIF
+from PIL import Image
+from PIL.ExifTags import TAGS
 
 import gettext
 _ = lambda x: gettext.ldgettext('simple-image-reducer', x)
@@ -457,10 +458,9 @@ along with this program; if not, see http://www.gnu.org/licenses/"""))
                 transpose_methods = [Image.ROTATE_270]
             elif rotate_method == 'exif':
                 if 'exif' in img.info:
-                    tags = EXIF.process_file(open(input), details=False)
-                    if 'Image Orientation' in tags:
-                        transpose_methods = exif_to_transpose[
-                                tags['Image Orientation'].values[0] - 1]
+                    for k, val in img._getexif().items():
+                      if TAGS.get(k, k) == 'Orientation':
+                        transpose_methods = exif_to_transpose[val - 1]
             for method in transpose_methods:
                 img = img.transpose(method)
             if size:
@@ -470,6 +470,8 @@ along with this program; if not, see http://www.gnu.org/licenses/"""))
             else:
                 fmt = img.format
             options = {}
+            if 'exif' in img.info:
+              options['exif'] = img.info['exif']
             if fmt == 'JPEG':
                 options['quality'] = 90
             try:
