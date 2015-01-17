@@ -9,12 +9,11 @@ main window.
 
 Requirements:
 
-  Linux or other Unix-like OS
-  Python >= 2.4
-  PyGTK >= 2.12
-  Python Imaging Library (PIL)
-  EXIF.py
+* Linux or other Unix-like OS
+* Python >= 2.4
+* PyGTK >= 2.12
+* Python Imaging Library (PIL)
 
 To install the program type in the console:
 
-  make install
+    make install
