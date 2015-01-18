@@ -1,6 +1,6 @@
 2015-01-17 18:35  Henry
 
-        * [r24] Makefile: Changed version to 1.0.3.
+        * [r24] simple-image-reducer.py, Makefile: save exif data to output file. Changed version to 1.0.3.
 
 2010-12-24 16:19  lostclus
 

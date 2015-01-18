@@ -65,7 +65,7 @@ class MainWindow(gtk.Window):
         vbox = gtk.VBox()
         self.add(vbox)
 
-        table = gtk.Table(7, 3, False)
+        table = gtk.Table(7, 4, False)
         table.set_row_spacings(5)
         table.set_col_spacings(5)
         table.set_border_width(10)
@@ -108,7 +108,7 @@ class MainWindow(gtk.Window):
         box.set_spacing(5)
         box.set_layout(gtk.BUTTONBOX_START)
         table.attach(box,
-            2, 3, 1, 2,
+            2, 4, 1, 2,
             gtk.FILL,  gtk.FILL, 0, 0)
 
         button = gtk.Button()
@@ -163,6 +163,27 @@ class MainWindow(gtk.Window):
             1, 2, 2, 3,
             gtk.FILL | gtk.EXPAND,  gtk.FILL,
             0, 0)
+
+        button = gtk.Button()
+        button.set_tooltip_text(_("Add custom size..."))
+        image = gtk.Image()
+        image.set_from_stock(gtk.STOCK_ADD, gtk.ICON_SIZE_BUTTON)
+        button.add(image)
+        button.connect('clicked', self.on_resolution_add_clicked)
+        table.attach(button,
+                2, 3, 2, 3,
+                gtk.FILL, gtk.FILL, 0, 0)
+
+        button = gtk.Button()
+        button.set_tooltip_text(_("Remove selected size"))
+        image = gtk.Image()
+        image.set_from_stock(gtk.STOCK_REMOVE, gtk.ICON_SIZE_BUTTON)
+        button.add(image)
+        button.connect('clicked', self.on_resolution_remove_clicked)
+        table.attach(button,
+                3, 4, 2, 3,
+                gtk.FILL, gtk.FILL, 0, 0)
+
 
         label = gtk.Label(_("Rotate:"))
         label.set_alignment(1, 0.5)
@@ -258,7 +279,7 @@ class MainWindow(gtk.Window):
         box.set_border_width(5)
         box.set_layout(gtk.BUTTONBOX_END)
         table.attach(box,
-            0, 3, 6, 7,
+            0, 4, 6, 7,
             gtk.FILL | gtk.EXPAND,  gtk.FILL, 0, 0)
 
         button = gtk.Button(stock=gtk.STOCK_CANCEL)
@@ -321,6 +342,24 @@ along with this program; if not, see http://www.gnu.org/licenses/"""))
         model.set(iter, 0, path)
         self.update_status_bar()
         self.update_buttons()
+
+    def on_resolution_add_clicked(self, *args):
+        value = "200x200"
+        text = value.strip()
+        size = tuple([int(x) for x in text.split('x')])
+        self.resolution_map.append((size, text))
+        self.resolution.append_text(text)
+
+        for i in range(len(self.resolution_map)):
+            if self.resolution_map[i][0] == size:
+                self.resolution.set_active(i)
+                
+    def on_resolution_remove_clicked(self, *args):
+        item = self.resolution.get_active()
+        self.resolution.remove_text(item)
+        print type(self.resolution_map)
+#        self.resolution_map.remove(item)
+                
 
     def on_input_files_drag_data_received(self, widget, context, x, y,
             data, info, time):
