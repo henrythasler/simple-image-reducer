@@ -1,6 +1,7 @@
 # Simple Image Reducer
-reduce and rotate images in three-four clicks.
 based on the work of Konstantin Korikov.
+
+reduce and rotate images in three-four clicks.
 
 Simple Image Reducer is an GTK application to easily reduce and rotate images.
 It can be useful for processing digital photos before sending by email or
