@@ -52,7 +52,7 @@ class MainWindow(gtk.Window):
         self.cfg.set('last_used', 'output_format', '')
         self.cfg.add_section('options')
         self.cfg.set('options', 'resolutions',
-                '128x128,400x400,640x640,800x800,1024x1024,1200x1200,1800x1800')
+                '32x32,48x48,64x64,128x128,256x256,400x400,480x480,512x512,640x640,800x800,1024x1024,1280x1280,1600x1600,1800x1800,1920x1920,2048x2048')
         self.cfg.read(self.cfg_filename)
 
         self.task = None
