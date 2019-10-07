@@ -115,19 +115,13 @@ class MainWindow(Gtk.Window):
             2, 3, 1, 2,
             Gtk.AttachOptions.FILL,  Gtk.AttachOptions.FILL, 0, 0)
 
-        button = Gtk.Button()
+        button = Gtk.Button.new_from_icon_name("list-add", Gtk.IconSize.BUTTON)
         button.set_tooltip_text(_("Add files..."))
-        image = Gtk.Image()
-        image.set_from_stock(Gtk.STOCK_ADD, Gtk.IconSize.BUTTON)
-        button.add(image)
         button.connect('clicked', self.on_input_files_add_clicked)
         box.add(button)
 
-        button = Gtk.Button()
+        button = Gtk.Button.new_from_icon_name("list-remove", Gtk.IconSize.BUTTON)
         button.set_tooltip_text(_("Remove files"))
-        image = Gtk.Image()
-        image.set_from_stock(Gtk.STOCK_REMOVE, Gtk.IconSize.BUTTON)
-        button.add(image)
         button.connect('clicked', self.on_input_files_remove_clicked)
         box.add(button)
 
