@@ -22,9 +22,9 @@
 import sys
 import os
 import os.path
-import urllib
-import urlparse
-import ConfigParser
+import urllib.request, urllib.parse, urllib.error
+import urllib.parse
+import configparser
 
 from PIL import Image
 from PIL.ExifTags import TAGS
@@ -44,7 +44,7 @@ class MainWindow(gtk.Window):
         self.cfg_filename = os.path.expanduser(
                 os.path.join('~', '.config',
                     'simple-image-reducer', 'options'))
-        self.cfg = ConfigParser.SafeConfigParser()
+        self.cfg = configparser.SafeConfigParser()
         self.cfg.add_section('last_used')
         self.cfg.set('last_used', 'resolution', '')
         self.cfg.set('last_used', 'rotate', 'exif')
@@ -174,9 +174,9 @@ class MainWindow(gtk.Window):
         self.rotate.set_tooltip_text(_("Select a rotation method"))
         self.rotate_map = [
                 (None, _("No rotate")),
-                ('270', _(u"90\u00b0 clockwise")),
-                ('180', _(u"180\u00b0")),
-                ('90', _(u"90\u00b0 counter-clockwise")),
+                ('270', _("90\u00b0 clockwise")),
+                ('180', _("180\u00b0")),
+                ('90', _("90\u00b0 counter-clockwise")),
                 ('exif', _("According to EXIF data")),
                 ]
         for method, text in self.rotate_map:
@@ -313,7 +313,7 @@ along with this program; if not, see http://www.gnu.org/licenses/"""))
 
     def add_input_file(self, path):
         if path.startswith('file://'):
-            path = urllib.unquote(urlparse.urlsplit(path)[2])
+            path = urllib.parse.unquote(urllib.parse.urlsplit(path)[2])
         else:
             path = os.path.abspath(path)
         model = self.input_files.get_model()
@@ -458,7 +458,7 @@ along with this program; if not, see http://www.gnu.org/licenses/"""))
                 transpose_methods = [Image.ROTATE_270]
             elif rotate_method == 'exif':
                 if 'exif' in img.info:
-                    for k, val in img._getexif().items():
+                    for k, val in list(img._getexif().items()):
                       if TAGS.get(k, k) == 'Orientation':
                         transpose_methods = exif_to_transpose[val - 1]
             for method in transpose_methods:
@@ -506,7 +506,7 @@ along with this program; if not, see http://www.gnu.org/licenses/"""))
 
     def execute_iter(self):
         try:
-            self.task.next()
+            next(self.task)
         except StopIteration:
             self.task = None
             self.destroy()
