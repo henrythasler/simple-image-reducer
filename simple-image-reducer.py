@@ -69,24 +69,21 @@ class MainWindow(Gtk.Window):
         vbox = Gtk.VBox()
         self.add(vbox)
 
-        table = Gtk.Table(7, 3, False)
-        table.set_row_spacings(5)
-        table.set_col_spacings(5)
+        table = Gtk.Grid()
+        table.set_row_spacing(5)
+        table.set_column_spacing(5)
         table.set_border_width(10)
         vbox.pack_start(table, True, True, True)
 
         label = Gtk.Label(label=_("Input Files:"))
-        label.set_alignment(0, 0.5)
-        table.attach(label,
-                0, 2, 0, 1,
-                Gtk.AttachOptions.FILL, Gtk.AttachOptions.FILL, 0, 0)
+        label.set_xalign(0)
+        label.set_yalign(0.5)
+        table.attach(label, 0, 0, 2, 1)
         sw = Gtk.ScrolledWindow()
         sw.set_shadow_type(Gtk.ShadowType.IN)
         sw.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
         table.attach(sw,
-                0, 2, 1, 2,
-                Gtk.AttachOptions.FILL | Gtk.AttachOptions.EXPAND,
-                Gtk.AttachOptions.FILL | Gtk.AttachOptions.EXPAND, 0, 0)
+                0, 1, 2, 1)
 
         self.input_files = Gtk.TreeView()
         self.input_files.set_tooltip_text(_("Drag image files here"))
@@ -112,8 +109,7 @@ class MainWindow(Gtk.Window):
         box.set_spacing(5)
         box.set_layout(Gtk.ButtonBoxStyle.START)
         table.attach(box,
-            2, 3, 1, 2,
-            Gtk.AttachOptions.FILL,  Gtk.AttachOptions.FILL, 0, 0)
+            2, 1, 1, 1)
 
         button = Gtk.Button.new_from_icon_name("list-add", Gtk.IconSize.BUTTON)
         button.set_tooltip_text(_("Add files..."))
@@ -126,10 +122,10 @@ class MainWindow(Gtk.Window):
         box.add(button)
 
         label = Gtk.Label(label=_("Fit to:"))
-        label.set_alignment(1, 0.5)
+        label.set_xalign(1)
+        label.set_yalign(0.5)
         table.attach(label,
-                0, 1, 2, 3,
-                Gtk.AttachOptions.FILL, Gtk.AttachOptions.FILL, 0, 0)
+                0, 2, 1, 1)
 
         self.resolution = Gtk.ComboBoxText()
         self.resolution.set_tooltip_text(_("Select a maximum width and height"))
@@ -158,15 +154,13 @@ class MainWindow(Gtk.Window):
                 lambda *args: self.update_output_files())
 
         table.attach(self.resolution,
-            1, 2, 2, 3,
-            Gtk.AttachOptions.FILL | Gtk.AttachOptions.EXPAND,  Gtk.AttachOptions.FILL,
-            0, 0)
+            1, 2, 1, 1)
 
         label = Gtk.Label(label=_("Rotate:"))
-        label.set_alignment(1, 0.5)
+        label.set_xalign(1)
+        label.set_yalign(0.5)
         table.attach(label,
-                0, 1, 3, 4,
-                Gtk.AttachOptions.FILL, Gtk.AttachOptions.FILL, 0, 0)
+                0, 3, 1, 1)
 
         self.rotate = Gtk.ComboBoxText()
         self.rotate.set_tooltip_text(_("Select a rotation method"))
@@ -187,15 +181,13 @@ class MainWindow(Gtk.Window):
                 self.rotate.set_active(i)
 
         table.attach(self.rotate,
-            1, 2, 3, 4,
-            Gtk.AttachOptions.FILL | Gtk.AttachOptions.EXPAND, Gtk.AttachOptions.FILL,
-            0, 0)
+            1, 3, 1, 1)
 
         label = Gtk.Label(label=_("Output files:"))
-        label.set_alignment(1, 0)
+        label.set_xalign(1)
+        label.set_yalign(0)
         table.attach(label,
-                0, 1, 4, 5,
-                Gtk.AttachOptions.FILL, Gtk.AttachOptions.FILL, 0, 0)
+                0, 4, 1, 1)
 
         box = Gtk.VBox()
         self.output_type_append = group = Gtk.RadioButton.new_with_label_from_widget(None, "")
@@ -216,15 +208,13 @@ class MainWindow(Gtk.Window):
         self.update_output_files()
 
         table.attach(box,
-            1, 2, 4, 5,
-            Gtk.AttachOptions.FILL | Gtk.AttachOptions.EXPAND,  Gtk.AttachOptions.FILL,
-            0, 0)
+            1, 4, 1, 1)
 
         label = Gtk.Label(label=_("Output format:"))
-        label.set_alignment(1, 0.5)
+        label.set_xalign(1)
+        label.set_yalign(0.5)
         table.attach(label,
-                0, 1, 5, 6,
-                Gtk.AttachOptions.FILL, Gtk.AttachOptions.FILL, 0, 0)
+                0, 5, 1, 1)
 
         self.output_format = Gtk.ComboBoxText()
         self.output_format_map = [
@@ -247,17 +237,14 @@ class MainWindow(Gtk.Window):
                 self.output_format.set_active(i)
 
         table.attach(self.output_format,
-            1, 2, 5, 6,
-            Gtk.AttachOptions.FILL | Gtk.AttachOptions.EXPAND,  Gtk.AttachOptions.FILL,
-            0, 0)
+            1, 5, 1, 1)
 
         box = Gtk.HButtonBox()
         box.set_spacing(5)
         box.set_border_width(5)
         box.set_layout(Gtk.ButtonBoxStyle.END)
         table.attach(box,
-            0, 3, 6, 7,
-            Gtk.AttachOptions.FILL | Gtk.AttachOptions.EXPAND,  Gtk.AttachOptions.FILL, 0, 0)
+            0, 6, 3, 1)
 
         button = Gtk.Button.new_with_mnemonic(_("_Cancel"))
         button.connect('clicked', self.destroy)
