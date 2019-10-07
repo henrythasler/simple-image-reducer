@@ -30,9 +30,13 @@ from PIL import Image
 from PIL.ExifTags import TAGS
 
 import gettext
-_ = lambda x: gettext.ldgettext('simple-image-reducer', x)
+_ = lambda x: gettext.dgettext('simple-image-reducer', x)
 
+import gi
+
+gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
+from gi.repository import Gdk
 from gi.repository import GObject
 
 version = '@VERSION@'
@@ -44,7 +48,7 @@ class MainWindow(Gtk.Window):
         self.cfg_filename = os.path.expanduser(
                 os.path.join('~', '.config',
                     'simple-image-reducer', 'options'))
-        self.cfg = configparser.SafeConfigParser()
+        self.cfg = configparser.ConfigParser()
         self.cfg.add_section('last_used')
         self.cfg.set('last_used', 'resolution', '')
         self.cfg.set('last_used', 'rotate', 'exif')
@@ -69,7 +73,7 @@ class MainWindow(Gtk.Window):
         table.set_row_spacings(5)
         table.set_col_spacings(5)
         table.set_border_width(10)
-        vbox.pack_start(table, True, True)
+        vbox.pack_start(table, True, True, True)
 
         label = Gtk.Label(label=_("Input Files:"))
         label.set_alignment(0, 0.5)
@@ -92,7 +96,7 @@ class MainWindow(Gtk.Window):
         self.input_files.set_rubber_banding(True)
         self.input_files.drag_dest_set(
                 Gtk.DestDefaults.ALL,
-                [('text/uri-list', 0, 0)],
+                [Gtk.TargetEntry.new('text/uri-list', 0, 0)],
                 Gdk.DragAction.COPY | Gdk.DragAction.MOVE)
         self.input_files.connect('drag-data-received',
                 self.on_input_files_drag_data_received)
@@ -200,11 +204,11 @@ class MainWindow(Gtk.Window):
                 Gtk.AttachOptions.FILL, Gtk.AttachOptions.FILL, 0, 0)
 
         box = Gtk.VBox()
-        self.output_type_append = group = Gtk.RadioButton(None, "")
+        self.output_type_append = group = Gtk.RadioButton.new_with_label_from_widget(None, "")
         box.add(self.output_type_append)
-        self.output_type_subdirectory = Gtk.RadioButton(group, "")
+        self.output_type_subdirectory = Gtk.RadioButton.new_with_label_from_widget(group, "")
         box.add(self.output_type_subdirectory)
-        self.output_type_in_place = Gtk.RadioButton(group,
+        self.output_type_in_place = Gtk.RadioButton.new_with_label_from_widget(group,
                 _("Modify images in place"))
         box.add(self.output_type_in_place)
 
@@ -274,7 +278,7 @@ class MainWindow(Gtk.Window):
         box.add(button)
 
         self.statusbar = Gtk.Statusbar()
-        vbox.pack_start(self.statusbar, False, False)
+        vbox.pack_start(self.statusbar, False, False, False)
         self.update_status_bar()
         self.update_buttons()
 
