@@ -32,14 +32,14 @@ from PIL.ExifTags import TAGS
 import gettext
 _ = lambda x: gettext.ldgettext('simple-image-reducer', x)
 
-import gtk
-import gobject
+from gi.repository import Gtk
+from gi.repository import GObject
 
 version = '@VERSION@'
 
-class MainWindow(gtk.Window):
+class MainWindow(Gtk.Window):
     def __init__(self, argv):
-        gtk.Window.__init__(self)
+        GObject.GObject.__init__(self)
 
         self.cfg_filename = os.path.expanduser(
                 os.path.join('~', '.config',
@@ -62,78 +62,78 @@ class MainWindow(gtk.Window):
         self.set_title(_("Simple Image Reducer"))
         self.set_icon_name('simple-image-reducer')
 
-        vbox = gtk.VBox()
+        vbox = Gtk.VBox()
         self.add(vbox)
 
-        table = gtk.Table(7, 3, False)
+        table = Gtk.Table(7, 3, False)
         table.set_row_spacings(5)
         table.set_col_spacings(5)
         table.set_border_width(10)
         vbox.pack_start(table, True, True)
 
-        label = gtk.Label(_("Input Files:"))
+        label = Gtk.Label(label=_("Input Files:"))
         label.set_alignment(0, 0.5)
         table.attach(label,
                 0, 2, 0, 1,
-                gtk.FILL, gtk.FILL, 0, 0)
-        sw = gtk.ScrolledWindow()
-        sw.set_shadow_type(gtk.SHADOW_IN)
-        sw.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
+                Gtk.AttachOptions.FILL, Gtk.AttachOptions.FILL, 0, 0)
+        sw = Gtk.ScrolledWindow()
+        sw.set_shadow_type(Gtk.ShadowType.IN)
+        sw.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
         table.attach(sw,
                 0, 2, 1, 2,
-                gtk.FILL | gtk.EXPAND,
-                gtk.FILL | gtk.EXPAND, 0, 0)
+                Gtk.AttachOptions.FILL | Gtk.AttachOptions.EXPAND,
+                Gtk.AttachOptions.FILL | Gtk.AttachOptions.EXPAND, 0, 0)
 
-        self.input_files = gtk.TreeView()
+        self.input_files = Gtk.TreeView()
         self.input_files.set_tooltip_text(_("Drag image files here"))
         sw.add(self.input_files)
         self.input_files.set_size_request(-1, 200)
-        self.input_files.get_selection().set_mode(gtk.SELECTION_MULTIPLE)
+        self.input_files.get_selection().set_mode(Gtk.SelectionMode.MULTIPLE)
         self.input_files.set_rubber_banding(True)
         self.input_files.drag_dest_set(
-                gtk.DEST_DEFAULT_ALL,
+                Gtk.DestDefaults.ALL,
                 [('text/uri-list', 0, 0)],
-                gtk.gdk.ACTION_COPY | gtk.gdk.ACTION_MOVE)
+                Gdk.DragAction.COPY | Gdk.DragAction.MOVE)
         self.input_files.connect('drag-data-received',
                 self.on_input_files_drag_data_received)
 
 
-        model = gtk.ListStore(gobject.TYPE_STRING)
+        model = Gtk.ListStore(GObject.TYPE_STRING)
         self.input_files.set_model(model)
-        column = gtk.TreeViewColumn(_("File"),
-                gtk.CellRendererText(), text=0)
+        column = Gtk.TreeViewColumn(_("File"),
+                Gtk.CellRendererText(), text=0)
         self.input_files.append_column(column)
 
-        box = gtk.VButtonBox()
+        box = Gtk.VButtonBox()
         box.set_spacing(5)
-        box.set_layout(gtk.BUTTONBOX_START)
+        box.set_layout(Gtk.ButtonBoxStyle.START)
         table.attach(box,
             2, 3, 1, 2,
-            gtk.FILL,  gtk.FILL, 0, 0)
+            Gtk.AttachOptions.FILL,  Gtk.AttachOptions.FILL, 0, 0)
 
-        button = gtk.Button()
+        button = Gtk.Button()
         button.set_tooltip_text(_("Add files..."))
-        image = gtk.Image()
-        image.set_from_stock(gtk.STOCK_ADD, gtk.ICON_SIZE_BUTTON)
+        image = Gtk.Image()
+        image.set_from_stock(Gtk.STOCK_ADD, Gtk.IconSize.BUTTON)
         button.add(image)
         button.connect('clicked', self.on_input_files_add_clicked)
         box.add(button)
 
-        button = gtk.Button()
+        button = Gtk.Button()
         button.set_tooltip_text(_("Remove files"))
-        image = gtk.Image()
-        image.set_from_stock(gtk.STOCK_REMOVE, gtk.ICON_SIZE_BUTTON)
+        image = Gtk.Image()
+        image.set_from_stock(Gtk.STOCK_REMOVE, Gtk.IconSize.BUTTON)
         button.add(image)
         button.connect('clicked', self.on_input_files_remove_clicked)
         box.add(button)
 
-        label = gtk.Label(_("Fit to:"))
+        label = Gtk.Label(label=_("Fit to:"))
         label.set_alignment(1, 0.5)
         table.attach(label,
                 0, 1, 2, 3,
-                gtk.FILL, gtk.FILL, 0, 0)
+                Gtk.AttachOptions.FILL, Gtk.AttachOptions.FILL, 0, 0)
 
-        self.resolution = gtk.combo_box_new_text()
+        self.resolution = Gtk.ComboBoxText()
         self.resolution.set_tooltip_text(_("Select a maximum width and height"))
         self.resolution_map = [
                 (None, _("No change")),
@@ -161,16 +161,16 @@ class MainWindow(gtk.Window):
 
         table.attach(self.resolution,
             1, 2, 2, 3,
-            gtk.FILL | gtk.EXPAND,  gtk.FILL,
+            Gtk.AttachOptions.FILL | Gtk.AttachOptions.EXPAND,  Gtk.AttachOptions.FILL,
             0, 0)
 
-        label = gtk.Label(_("Rotate:"))
+        label = Gtk.Label(label=_("Rotate:"))
         label.set_alignment(1, 0.5)
         table.attach(label,
                 0, 1, 3, 4,
-                gtk.FILL, gtk.FILL, 0, 0)
+                Gtk.AttachOptions.FILL, Gtk.AttachOptions.FILL, 0, 0)
 
-        self.rotate = gtk.combo_box_new_text()
+        self.rotate = Gtk.ComboBoxText()
         self.rotate.set_tooltip_text(_("Select a rotation method"))
         self.rotate_map = [
                 (None, _("No rotate")),
@@ -190,21 +190,21 @@ class MainWindow(gtk.Window):
 
         table.attach(self.rotate,
             1, 2, 3, 4,
-            gtk.FILL | gtk.EXPAND, gtk.FILL,
+            Gtk.AttachOptions.FILL | Gtk.AttachOptions.EXPAND, Gtk.AttachOptions.FILL,
             0, 0)
 
-        label = gtk.Label(_("Output files:"))
+        label = Gtk.Label(label=_("Output files:"))
         label.set_alignment(1, 0)
         table.attach(label,
                 0, 1, 4, 5,
-                gtk.FILL, gtk.FILL, 0, 0)
+                Gtk.AttachOptions.FILL, Gtk.AttachOptions.FILL, 0, 0)
 
-        box = gtk.VBox()
-        self.output_type_append = group = gtk.RadioButton(None, "")
+        box = Gtk.VBox()
+        self.output_type_append = group = Gtk.RadioButton(None, "")
         box.add(self.output_type_append)
-        self.output_type_subdirectory = gtk.RadioButton(group, "")
+        self.output_type_subdirectory = Gtk.RadioButton(group, "")
         box.add(self.output_type_subdirectory)
-        self.output_type_in_place = gtk.RadioButton(group,
+        self.output_type_in_place = Gtk.RadioButton(group,
                 _("Modify images in place"))
         box.add(self.output_type_in_place)
 
@@ -219,16 +219,16 @@ class MainWindow(gtk.Window):
 
         table.attach(box,
             1, 2, 4, 5,
-            gtk.FILL | gtk.EXPAND,  gtk.FILL,
+            Gtk.AttachOptions.FILL | Gtk.AttachOptions.EXPAND,  Gtk.AttachOptions.FILL,
             0, 0)
 
-        label = gtk.Label(_("Output format:"))
+        label = Gtk.Label(label=_("Output format:"))
         label.set_alignment(1, 0.5)
         table.attach(label,
                 0, 1, 5, 6,
-                gtk.FILL, gtk.FILL, 0, 0)
+                Gtk.AttachOptions.FILL, Gtk.AttachOptions.FILL, 0, 0)
 
-        self.output_format = gtk.combo_box_new_text()
+        self.output_format = Gtk.ComboBoxText()
         self.output_format_map = [
                 (None, None, _("No change")),
                 ('BMP', '.bmp', _("BMP")),
@@ -250,30 +250,30 @@ class MainWindow(gtk.Window):
 
         table.attach(self.output_format,
             1, 2, 5, 6,
-            gtk.FILL | gtk.EXPAND,  gtk.FILL,
+            Gtk.AttachOptions.FILL | Gtk.AttachOptions.EXPAND,  Gtk.AttachOptions.FILL,
             0, 0)
 
-        box = gtk.HButtonBox()
+        box = Gtk.HButtonBox()
         box.set_spacing(5)
         box.set_border_width(5)
-        box.set_layout(gtk.BUTTONBOX_END)
+        box.set_layout(Gtk.ButtonBoxStyle.END)
         table.attach(box,
             0, 3, 6, 7,
-            gtk.FILL | gtk.EXPAND,  gtk.FILL, 0, 0)
+            Gtk.AttachOptions.FILL | Gtk.AttachOptions.EXPAND,  Gtk.AttachOptions.FILL, 0, 0)
 
-        button = gtk.Button(stock=gtk.STOCK_CANCEL)
+        button = Gtk.Button(stock=Gtk.STOCK_CANCEL)
         button.connect('clicked', self.destroy)
         box.add(button)
 
-        button = gtk.Button(stock=gtk.STOCK_ABOUT)
+        button = Gtk.Button(stock=Gtk.STOCK_ABOUT)
         button.connect('clicked', self.about)
         box.add(button)
 
-        self.execute_button = button = gtk.Button(stock=gtk.STOCK_EXECUTE)
+        self.execute_button = button = Gtk.Button(stock=Gtk.STOCK_EXECUTE)
         button.connect('clicked', self.execute)
         box.add(button)
 
-        self.statusbar = gtk.Statusbar()
+        self.statusbar = Gtk.Statusbar()
         vbox.pack_start(self.statusbar, False, False)
         self.update_status_bar()
         self.update_buttons()
@@ -284,10 +284,10 @@ class MainWindow(gtk.Window):
         self.show_all()
 
     def destroy(self, *args):
-        gtk.main_quit()
+        Gtk.main_quit()
 
     def about(self, *args):
-        dialog = gtk.AboutDialog()
+        dialog = Gtk.AboutDialog()
         dialog.set_name(_("Simple Image Reducer"))
         dialog.set_version(version)
         dialog.set_comments(_("Reduce and rotate images in three-four clicks."))
@@ -332,14 +332,14 @@ along with this program; if not, see http://www.gnu.org/licenses/"""))
             context.finish(False, False, time)
 
     def on_input_files_add_clicked(self, *args):
-        fc = gtk.FileChooserDialog(
+        fc = Gtk.FileChooserDialog(
                 title=_("Add File..."), parent=None,
-                action=gtk.FILE_CHOOSER_ACTION_OPEN,
-                buttons=(gtk.STOCK_CANCEL,gtk.RESPONSE_CANCEL,
-                    gtk.STOCK_ADD,gtk.RESPONSE_OK))
+                action=Gtk.FileChooserAction.OPEN,
+                buttons=(Gtk.STOCK_CANCEL,Gtk.ResponseType.CANCEL,
+                    Gtk.STOCK_ADD,Gtk.ResponseType.OK))
         fc.set_select_multiple(True)
-        fc.set_default_response(gtk.RESPONSE_OK)
-        filter = gtk.FileFilter()
+        fc.set_default_response(Gtk.ResponseType.OK)
+        filter = Gtk.FileFilter()
         filter.set_name(_("Image Files"))
         filter.add_pattern('*.bmp')
         filter.add_pattern('*.gif')
@@ -349,19 +349,19 @@ along with this program; if not, see http://www.gnu.org/licenses/"""))
         filter.add_pattern('*.tif')
         filter.add_pattern('*.tiff')
         fc.add_filter(filter)
-        filter = gtk.FileFilter()
+        filter = Gtk.FileFilter()
         filter.set_name(_("All Files"))
         filter.add_pattern('*')
         fc.add_filter(filter)
         response = fc.run()
-        if response == gtk.RESPONSE_OK:
+        if response == Gtk.ResponseType.OK:
             for uri in fc.get_filenames():
                 self.add_input_file(uri)
         fc.destroy()
 
     def on_input_files_remove_clicked(self, *args):
         model, rows = self.input_files.get_selection().get_selected_rows()
-        rows = [gtk.TreeRowReference(model, path) for path in rows]
+        rows = [Gtk.TreeRowReference(model, path) for path in rows]
         for row in rows:
             model.remove(model.get_iter(row.get_path()))
         self.update_status_bar()
@@ -483,9 +483,9 @@ along with this program; if not, see http://www.gnu.org/licenses/"""))
         self.update_status_bar()
 
         if errors:
-            dialog = gtk.MessageDialog(self,
-                    gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT,
-                    gtk.MESSAGE_ERROR, gtk.BUTTONS_CLOSE,
+            dialog = Gtk.MessageDialog(self,
+                    Gtk.DialogFlags.MODAL | Gtk.DialogFlags.DESTROY_WITH_PARENT,
+                    Gtk.MessageType.ERROR, Gtk.ButtonsType.CLOSE,
                     "\n".join(errors))
             dialog.run()
 
@@ -518,8 +518,8 @@ along with this program; if not, see http://www.gnu.org/licenses/"""))
             return
         self.processed_count = 0
         self.task = self.execute_task()
-        gobject.idle_add(self.execute_iter)
+        GObject.idle_add(self.execute_iter)
 
 if __name__ == '__main__':
     MainWindow(sys.argv)
-    gtk.main()
+    Gtk.main()
