@@ -265,15 +265,15 @@ class MainWindow(Gtk.Window):
             0, 3, 6, 7,
             Gtk.AttachOptions.FILL | Gtk.AttachOptions.EXPAND,  Gtk.AttachOptions.FILL, 0, 0)
 
-        button = Gtk.Button(stock=Gtk.STOCK_CANCEL)
+        button = Gtk.Button.new_with_mnemonic(_("_Cancel"))
         button.connect('clicked', self.destroy)
         box.add(button)
 
-        button = Gtk.Button(stock=Gtk.STOCK_ABOUT)
+        button = Gtk.Button.new_with_mnemonic(_("_About"))
         button.connect('clicked', self.about)
         box.add(button)
 
-        self.execute_button = button = Gtk.Button(stock=Gtk.STOCK_EXECUTE)
+        self.execute_button = button = Gtk.Button.new_with_mnemonic(_("_Execute"))
         button.connect('clicked', self.execute)
         box.add(button)
 
