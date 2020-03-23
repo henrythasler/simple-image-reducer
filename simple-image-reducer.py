@@ -23,7 +23,6 @@ import sys
 import os
 import os.path
 import urllib.request, urllib.parse, urllib.error
-import urllib.parse
 import configparser
 
 from PIL import Image
