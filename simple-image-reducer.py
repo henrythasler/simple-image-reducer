@@ -495,6 +495,8 @@ along with this program; if not, see http://www.gnu.org/licenses/"""))
             self.task = None
             self.destroy()
             return False
+        except:
+            self.task = None
         return True
 
     def execute(self, *args):
