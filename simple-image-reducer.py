@@ -405,7 +405,7 @@ along with this program; if not, see http://www.gnu.org/licenses/"""))
         exif_to_transpose = [
                 (),
                 (Image.FLIP_LEFT_RIGHT,),
-                (Image.ROTATE_180),
+                (Image.ROTATE_180,),
                 (Image.FLIP_TOP_BOTTOM,),
                 (Image.ROTATE_90, Image.FLIP_LEFT_RIGHT),
                 (Image.ROTATE_270,),
