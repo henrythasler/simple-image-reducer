@@ -23,7 +23,6 @@ import sys
 import os
 import os.path
 import urllib.request, urllib.parse, urllib.error
-import urllib.parse
 import configparser
 
 from PIL import Image
@@ -405,7 +404,7 @@ along with this program; if not, see http://www.gnu.org/licenses/"""))
         exif_to_transpose = [
                 (),
                 (Image.FLIP_LEFT_RIGHT,),
-                (Image.ROTATE_180),
+                (Image.ROTATE_180,),
                 (Image.FLIP_TOP_BOTTOM,),
                 (Image.ROTATE_90, Image.FLIP_LEFT_RIGHT),
                 (Image.ROTATE_270,),
@@ -496,6 +495,8 @@ along with this program; if not, see http://www.gnu.org/licenses/"""))
             self.task = None
             self.destroy()
             return False
+        except:
+            self.task = None
         return True
 
     def execute(self, *args):
